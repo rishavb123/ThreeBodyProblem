@@ -6,4 +6,4 @@ body_2_color = GREEN
 body_3_color = BLUE
 
 width = 800
-height = 600
+height = 800
