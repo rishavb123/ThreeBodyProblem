@@ -12,7 +12,8 @@ pygame.display.set_caption('Three Body Problem')
 
 clock = pygame.time.Clock()
 
-bodies = [Body(10, 10, [200, 500], [0, 0], body_1_color), Body(10, 10, [600, 400], [0, 0], body_2_color), Body(10, 10, [400, 100], [0, 0], body_3_color)]
+# bodies = [Body(10, 10, [300, 100], [0, 200], body_1_color), Body(100, 10, [500, 100], [0, 0], body_2_color)]
+bodies = [Body(10, 10, [100, 500], [0, 0], body_1_color), Body(10, 10, [500, 500], [0, 0], body_2_color), Body(10, 10, [300, 100], [0, 0], body_3_color)]
 
 current_time = time.time()
 
