@@ -1,3 +1,4 @@
+from util import mod_pos
 import pygame
 from config import *
 import sys
@@ -12,7 +13,7 @@ pygame.display.set_caption('Three Body Problem')
 
 clock = pygame.time.Clock()
 
-bodies = [Body(10, 10, [300, 100], [0, 300], body_1_color), Body(10, 10, [500, 100], [-100, 0], body_2_color)]
+bodies = [Body(100, 10, [300, 100], [0, 300], body_1_color), Body(10, 10, [500, 100], [-100, 0], body_2_color)]
 # bodies = [Body(10, 10, [100, 500], [0, 0], body_1_color), Body(10, 10, [500, 500], [0, 0], body_2_color), Body(10, 10, [300, 100], [0, 0], body_3_color)]
 # bodies = [Body(100, 30, [400, 300], [0, 0], body_1_color, False), Body(10, 10, [400, 50], [600, 0], body_2_color)]
 
@@ -33,9 +34,10 @@ while True:
         body.update(dt)
         body.draw(surface)
 
-    for i in range(len(bodies)):
-        for j in range(i + 1, len(bodies)):
-            pygame.draw.line(surface, BLACK, bodies[i].position, bodies[j].position)
+    if draw_lines:
+        for i in range(len(bodies)):
+            for j in range(i + 1, len(bodies)):
+                pygame.draw.line(surface, BLACK, mod_pos(bodies[i].position), mod_pos(bodies[j].position))
 
     current_time += dt
     pygame.display.flip()

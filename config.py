@@ -7,3 +7,5 @@ body_3_color = BLUE
 
 width = 800
 height = 800
+
+draw_lines = False

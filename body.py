@@ -1,3 +1,4 @@
+from util import mod_pos
 import numpy as np
 import pygame
 from config import body_1_color
@@ -41,4 +42,4 @@ class Body:
                 self.position = np.add(self.position, np.multiply(self.velocity, dt / Body.num_updates))
 
     def draw(self, surface):
-        pygame.draw.circle(surface, self.color, [int(x) for x in self.position], int(self.r))
+        pygame.draw.circle(surface, self.color, mod_pos([int(x) for x in self.position]), int(self.r))
